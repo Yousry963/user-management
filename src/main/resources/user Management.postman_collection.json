@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "5a62b04a-c3b5-41a8-b969-5812f250cfce",
+		"name": "user Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7177843"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Michael\",\r\n  \"lastName\": \"Knight\",\r\n  \"email\": \"info@saqaya.com\",\r\n  \"marketingConsent\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpbmZvQHNhcWF5YS5jb20iLCJpYXQiOjE3MDAwODgzNzYsImV4cCI6MTcwMDE3NDc3Nn0._O4AGD6TxexIdDlDGkGs-4x0BacV8d_SneuwFEwSGHOyinZWx9bDX6FOsS_2SBLywYPr8_39vDdeDR_CUBNwbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/1a6ee41f58156b6881990457612aea0db15911af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"1a6ee41f58156b6881990457612aea0db15911af"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

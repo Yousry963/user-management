@@ -1,0 +1,41 @@
+server:
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        secure: true
+springdoc:
+  swagger-ui:
+    default-model-expand-depth: -1
+    doc-expansion: none
+    path: /swagger-ui.html
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: sa
+    url: jdbc:h2:mem:maindb;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+  jackson:
+    default-property-inclusion: non_null
+  h2:
+    console:
+      enabled: true
+  liquibase:
+    change-log: classpath:changelog/db.changelog-master.yaml
+    url: jdbc:h2:mem:maindb;DB_CLOSE_ON_EXIT=FALSE
+    user: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+#URLS
+app:
+  urls:
+    registration: /user
+# Token
+  token:
+    jwtSecret: saqaya#123
+    jwtExpirationMs: 86400000
+    bearerHeaderPrefix: 'Bearer '
+
+
